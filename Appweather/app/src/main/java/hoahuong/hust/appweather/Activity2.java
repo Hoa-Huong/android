@@ -44,7 +44,7 @@ public class Activity2 extends AppCompatActivity {
         String city = intent.getStringExtra("name");
         Log.d("ketqua", "Thành phố: " + city);
         if (city.equals("")){
-            tenthanhpho = "London";
+            tenthanhpho = "Hanoi";
             get7Days(tenthanhpho);
         }
         else {
@@ -77,7 +77,7 @@ public class Activity2 extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                    Log.d("name", "JSON: " + response);
+//                    Log.d("name", "JSON: " + response);
 
                         try {
                             JSONObject jsonObject = new JSONObject(response);
@@ -90,16 +90,17 @@ public class Activity2 extends AppCompatActivity {
 
                             JSONArray jsonArrayList = jsonObject.getJSONArray("list");
                             for (int i = 0; i<jsonArrayList.length(); i++){
-                                JSONObject jsonObjectList=jsonArrayList.getJSONObject(i);
+
+                                JSONObject jsonObjectList =jsonArrayList.getJSONObject(i);
                                 String day = jsonObjectList.getString("dt");
                                 long l=Long.valueOf(day);
                                 Date date= new Date(l*1000L);
-                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE dd-MM-yyyy ");
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
                                 String Day = simpleDateFormat.format(date);
 
-                                JSONObject jsonObjectTemp = jsonObjectList.getJSONObject("temp");
-                                String max_temp= jsonObjectTemp.getString("max");
-                                String min_temp= jsonObjectTemp.getString("min");
+                                JSONObject jsonObjectTemp = jsonObjectList.getJSONObject("main");
+                                String max_temp= jsonObjectTemp.getString("temp_max");
+                                String min_temp= jsonObjectTemp.getString("temp_min");
 
                                 Double a = Double.valueOf(min_temp);
                                 String min=String.valueOf(a.intValue());

@@ -17,15 +17,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ngày tháng"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:id="@+id/tvday2"
             android:gravity="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
             android:id="@+id/tvstatus2"
             android:text="status"
             android:gravity="center"/>
@@ -45,19 +45,20 @@
             android:weightSum="3"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/icon2"
                 />
             <TextView
+
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="min_temp"
-                android:textSize="20dp"
-                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:id="@+id/min_temp"/>
             <TextView
@@ -65,8 +66,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="max_temp"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:textSize="18dp"
                 android:id="@+id/max_temp"
                 android:gravity="center"
                 />

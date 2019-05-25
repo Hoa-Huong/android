@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainweather();
-        getCurrentWeatherData("London");
+        getCurrentWeatherData("hanoi");
         //Bắt chức năng btnok
        ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String city = search.getText().toString() ;//Lấy giá trị của editText
                 if (city.equals("")){
-                    City = "London";
+                    City = "Hanoi";
                     getCurrentWeatherData(City);
                 }
                 else {
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                             //format day
                             long l=Long.valueOf(day);
                             Date date= new Date(l*1000L);
-                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE dd-MM-yyyy HH-mm-ss");
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
                             String Day = simpleDateFormat.format(date);
                             tvday.setText(Day);
 
